@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url(https://th.bing.com/th/id/OIP.aoMepEOYSeUpOQjAJYJKCAHaQB?rs=1&pid=ImgDetMain);
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; 
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 114px;
+            
+        }
+
+        label, select, input, button {
+            margin: 10px;
+            padding: 8px;
+            width: 100%; 
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .mobile{
+            background: url(https://th.bing.com/th/id/OIP.XNlT6Pf8PFyJOQVoxN46nAHaNK?rs=1&pid=ImgDetMain);
+            color: white;
+    border: none;
+    padding: 12px 39px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 818px;
+    width: 396px;
+    margin-top: -100px;
+}
+    </style>
+</head>
+<body>
+    <div class="mobile">
+    <div class="container">
+        
+        <div><h1 style="color: rgb(0, 0, 0);">Length Converter</h1>
+            <label for="fromUnit">From:</label>
+            <select id="fromUnit">
+                <option value="km">Kilometer (km)</option>
+                <option value="m">Meter (m)</option>
+                <option value="cm">Centimeter (cm)</option>
+                <option value="mm">Millimeter (mm)</option>
+                <option value="µm">Micrometer (µm)</option>
+                <option value="nm">Nanometer (nm)</option>
+                <option value="in">Inch (in)</option>
+                <option value="ft">Foot (ft)</option>
+                <option value="yd">Yard (yd)</option>
+                <option value="mi">Mile (mi)</option>
+            </select>
+            <input type="number" id="inputValue" placeholder="Enter value">
+        </div>
+        <div>
+            <label for="toUnit">To:</label>
+            <select id="toUnit">
+                <option value="km">Kilometer (km)</option>
+                <option value="m">Meter (m)</option>
+                <option value="cm">Centimeter (cm)</option>
+                <option value="mm">Millimeter (mm)</option>
+                <option value="µm">Micrometer (µm)</option>
+                <option value="nm">Nanometer (nm)</option>
+                <option value="in">Inch (in)</option>
+                <option value="ft">Foot (ft)</option>
+                <option value="yd">Yard (yd)</option>
+                <option value="mi">Mile (mi)</option>
+            </select>
+            <input type="text" id="result" readonly>
+        </div>
+        <button onclick="convert()">Convert</button>
+    </div>
+</div>
+    <script>
+      function convert() {
+    // Get values from the input fields
+    let inputValue = parseFloat(document.getElementById('inputValue').value);
+    let fromUnit = document.getElementById('fromUnit').value;
+    let toUnit = document.getElementById('toUnit').value;
+
+    // Convert input value to meters
+    let meters = 0;
+    switch (fromUnit) {
+        case "km":
+            meters = inputValue * 1000;
+            break;
+        case "m":
+            meters = inputValue;
+            break;
+        case "cm":
+            meters = inputValue / 100;
+            break;
+        case "mm":
+            meters = inputValue / 1000;
+            break;
+        case "µm":
+            meters = inputValue / 1000000;
+            break;
+        case "nm":
+            meters = inputValue / 1000000000;
+            break;
+        case "in":
+            meters = inputValue * 0.0254;
+            break;
+        case "ft":
+            meters = inputValue * 0.3048;
+            break;
+        case "yd":
+            meters = inputValue * 0.9144;
+            break;
+        case "mi":
+            meters = inputValue * 1609.34;
+            break;
+    }
+
+    // Convert meters to output unit
+    let outputValue = 0;
+    switch (toUnit) {
+        case "km":
+            outputValue = meters / 1000;
+            break;
+        case "m":
+            outputValue = meters;
+            break;
+        case "cm":
+            outputValue = meters * 100;
+            break;
+        case "mm":
+            outputValue = meters * 1000;
+            break;
+        case "µm":
+            outputValue = meters * 1000000;
+            break;
+        case "nm":
+            outputValue = meters * 1000000000;
+            break;
+        case "in":
+            outputValue = meters / 0.0254;
+            break;
+        case "ft":
+            outputValue = meters / 0.3048;
+            break;
+        case "yd":
+            outputValue = meters / 0.9144;
+            break;
+        case "mi":
+            outputValue = meters / 1609.34;
+            break;
+    }
+
+    // Display the result
+    document.getElementById('result').value = outputValue;
+}
+
+    </script>
+</body>
+</html>
