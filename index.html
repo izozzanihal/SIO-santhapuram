@@ -100,7 +100,7 @@
             var unitAmount15Percent = collatedAmount * 0.15;
             var percentage = (collatedAmount / unitAmount) * 100;
 
-            var outputText = "<p>Selected Unit: " + unitName + "</p>";
+            var outputText = unitName +":" + unitAmount.toFixed(2) + "</p>";
             outputText += "<p>Collated Amount: ₹" + collatedAmount.toFixed(2) + "</p>";
             outputText += "<p>Unit Amount (15%): ₹" + unitAmount15Percent.toFixed(2) + "</p>";
             outputText += "<p>Fundraising Progress: " + percentage.toFixed(2) + "%</p>";
@@ -112,7 +112,7 @@
                 outputText += "<p>You need ₹" + remainingAmount.toFixed(2) + " more to reach your target amount.</p>";
             }
             
-            outputText += '<button onclick="copyOutput()" class="btn btn-primary btn-copy"><i class="far fa-copy"></i> Copy</button>';
+            outputText += '<button onclick="copyOutput()" class="btn btn-primary"><i class="far fa-copy"></i></button>';
 
             document.getElementById('output').innerHTML = outputText;
         }
