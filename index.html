@@ -81,9 +81,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="collatedAmount">Total Colleted Amount:</label>
+                    <label for="collatedAmount">Total Collected Amount:</label>
                     <input type="number" id="collatedAmount" class="form-control">
-                    <label for="collatedAmount">Today Colleted Amount:</label>
+                    <label for="collatedAmount">Today Collected Amount:</label>
                     <input type="number" id="TodaycollatedAmount" class="form-control">
 
                 </div>
@@ -113,11 +113,11 @@
     var todayPercentage = (todayCollatedAmount / unitAmount) * 100;
 
     var outputText = unitName + ":" + unitAmount.toFixed(2) + "</p>";
-    outputText += "<p>Total Collated Amount: ₹" + collatedAmount.toFixed(2) + "</p>";
-    outputText += "<p>Today Collated Amount: ₹" + todayCollatedAmount.toFixed(2) + "</p>";
+    outputText += "<p>Total Collected Amount: ₹" + collatedAmount.toFixed(2) + "</p>";
+    outputText += "<p>Today Collected Amount: ₹" + todayCollatedAmount.toFixed(2) + "</p>";
 
     outputText += "<p>Unit Amount (15%): ₹" + unitAmount15Percent.toFixed(2) + "</p>";
-    outputText += "<p>Fundraising Progress: " + percentage.toFixed(2) + "%</p>";
+    outputText += "<p>Total Fundraising Progress: " + percentage.toFixed(2) + "%</p>";
     outputText += "<p>Today's Fundraising Progress: " + todayPercentage.toFixed(2) + "%</p>";
 
     if (collatedAmount >= unitAmount) {
@@ -131,7 +131,7 @@
         alert("അസ്സലാമു അലൈകും TEXT copy ചെയ്ത് റമദാൻ കളക്ഷൻ ഗ്രൂപ്പിൽ ഷെയർ ചെയ്യുക");
     }
 
-    outputText += '<button onclick="copyOutput()" class="btn btn-primary"><i class="far fa-copy"></i></button>';
+    outputText += '<button onclick="copyOutput()" class="btn btn-primary"><h3>copy <i class="far fa-copy"></i></h3> </button>';
 
     document.getElementById('output').innerHTML = outputText;
 }
