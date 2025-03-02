@@ -20,7 +20,7 @@
             align-items: center;
             z-index: 1000;
             color: #fff;
-            font-size: 2.5rem;
+            font-size: 2rem; /* Adjusted for mobile */
             font-weight: bold;
             animation: fadeOut 2s forwards;
         }
@@ -65,7 +65,7 @@
             color: #fff;
         }
         .container {
-            max-width: 400px;
+            max-width: 90%; /* Adjusted for mobile */
             width: 100%;
             margin: 20px;
             padding: 20px;
@@ -81,24 +81,24 @@
         }
         h1 {
             color: #fff;
-            font-size: 2.5rem;
+            font-size: 2rem; /* Adjusted for mobile */
             text-align: center;
             margin-bottom: 10px;
         }
         h2 {
             color: #ccc;
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* Adjusted for mobile */
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px; /* Adjusted for mobile */
         }
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Adjusted for mobile */
         }
         .form-control {
             border-radius: 10px;
             border: 1px solid #444;
-            padding: 12px;
-            font-size: 16px;
+            padding: 10px; /* Adjusted for mobile */
+            font-size: 14px; /* Adjusted for mobile */
             background: #333;
             color: #fff;
         }
@@ -111,8 +111,8 @@
             background: #444;
             border: none;
             border-radius: 10px;
-            padding: 12px;
-            font-size: 16px;
+            padding: 10px; /* Adjusted for mobile */
+            font-size: 14px; /* Adjusted for mobile */
             font-weight: bold;
             color: #fff;
             cursor: pointer;
@@ -122,28 +122,28 @@
             background: #666;
         }
         .card {
-            margin-top: 20px;
+            margin-top: 15px; /* Adjusted for mobile */
             border: none;
             border-radius: 15px;
             background: #333;
             box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
         }
         .card-body {
-            padding: 20px;
+            padding: 15px; /* Adjusted for mobile */
         }
         .card-body p {
-            margin: 10px 0;
-            font-size: 14px;
+            margin: 8px 0; /* Adjusted for mobile */
+            font-size: 12px; /* Adjusted for mobile */
             color: #ccc;
         }
         .btn-copy {
-            margin-top: 15px;
+            margin-top: 10px; /* Adjusted for mobile */
             width: 100%;
             background: #666;
             border: none;
             border-radius: 10px;
-            padding: 12px;
-            font-size: 16px;
+            padding: 10px; /* Adjusted for mobile */
+            font-size: 14px; /* Adjusted for mobile */
             font-weight: bold;
             color: #fff;
             cursor: pointer;
@@ -153,19 +153,46 @@
             background: #888;
         }
         .alert {
-            margin-top: 20px;
+            margin-top: 15px; /* Adjusted for mobile */
             border-radius: 10px;
             text-align: center;
-            font-size: 14px;
+            font-size: 12px; /* Adjusted for mobile */
             background: #444;
             color: #fff;
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 480px) {
+            #splash h1 {
+                font-size: 1.5rem; /* Smaller font for very small screens */
+            }
+            .container {
+                padding: 15px; /* Smaller padding for very small screens */
+            }
+            h1 {
+                font-size: 1.5rem; /* Smaller font for very small screens */
+            }
+            h2 {
+                font-size: 1rem; /* Smaller font for very small screens */
+            }
+            .form-control {
+                padding: 8px; /* Smaller padding for very small screens */
+                font-size: 12px; /* Smaller font for very small screens */
+            }
+            .btn-primary, .btn-copy {
+                padding: 8px; /* Smaller padding for very small screens */
+                font-size: 12px; /* Smaller font for very small screens */
+            }
+            .card-body p {
+                font-size: 10px; /* Smaller font for very small screens */
+            }
         }
     </style>
 </head>
 <body>
     <!-- Splash Screen -->
     <div id="splash">
-        <h1>SIO SANTHAPURAM............</h1>
+        <h1>അസ്സലാമു അലൈക്കും........</h1>
     </div>
 
     <!-- Main Container -->
