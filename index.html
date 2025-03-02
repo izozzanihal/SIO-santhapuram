@@ -3,150 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sio santhapuram</title>
+    <title>SIO SANTHAPURAM</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Splash Screen */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            animation: fadeOut 2s forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        /* Typing Animation */
+        #splash h1 {
+            overflow: hidden; /* Hide overflow */
+            border-right: 0.15em solid #fff; /* Cursor effect */
+            white-space: nowrap; /* Keep text in one line */
+            margin: 0 auto; /* Center the text */
+            letter-spacing: 0.15em; /* Spacing between letters */
+            animation: typing 3s steps(14, end), blink-caret 0.75s step-end infinite;
+        }
+
+        /* Typing effect */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Cursor blink effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+
+        /* Main Container */
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            background: #000;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
         }
         .container {
-            max-width: 600px;
-            margin: auto;
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
             padding: 20px;
-            border-radius: 10px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            background: #1a1a1a;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            display: none; /* Hidden initially */
+            animation: fadeIn 0.5s ease-in-out forwards;
         }
-        h1, h2 {
-           
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            color: #fff;
+            font-size: 2.5rem;
             text-align: center;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #ccc;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
         }
         .form-group {
             margin-bottom: 20px;
         }
-        button.btn-primary {
-            width: 100%;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .form-control {
+            border-radius: 10px;
+            border: 1px solid #444;
+            padding: 12px;
+            font-size: 16px;
+            background: #333;
+            color: #fff;
         }
-        button.btn-primary:hover {
-            background-color: #0056b3;
+        .form-control:focus {
+            border-color: #666;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        .btn-primary {
+            width: 100%;
+            background: #444;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: #666;
         }
         .card {
             margin-top: 20px;
             border: none;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            background: #333;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
         }
         .card-body {
             padding: 20px;
         }
-        p {
-            margin-bottom: 10px;
+        .card-body p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #ccc;
         }
         .btn-copy {
-            margin-top: 10px;
+            margin-top: 15px;
             width: 100%;
+            background: #666;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn-copy:hover {
+            background: #888;
+        }
+        .alert {
+            margin-top: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 14px;
+            background: #444;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 style=" color: rgba(216, 17, 17, 0.801); font-size: 60px;">SIO </h1>
-        <h2 style="color: rgb(12, 12, 12);">santhapuram </h2>
-        
-        <div class="row justify-content-center" style="margin-top: 100px;">
-            <div class="col-md-8">
-                <div class="form-group">
-                    <label for="unitAmount">Select Unit:</label>
-                    <select id="unitAmount" class="form-control">
-                        <option value="15000">പൂളമണ്ണ</option>
-                        <option value="18000">ശാന്തപുരം നോർത്ത്</option>
-                        <option value="22000">മുള്യാകാർശി</option>
-                        <option value="20000">പള്ളിക്കുത്ത്</option>
-                        <option value="23000">ഒലിപ്പുഴ</option>
-                        <option value="12000">വലിയപ്പറമ്പ്</option>
-                        <option value="25000">കാഞ്ഞിരപ്പളളി</option>
-                        <option value="28000">പാണ്ടിക്കാട്</option>
-                        <option value="13000">ചെമ്മാണിയോട്</option>
-                        <option value="25000">ചന്തപ്പടി (മേലാറ്റൂർ)</option>
-                        <option value="20000">ചുങ്കം</option>
-                        <option value="12000">ചിറക്കൽ</option>
-                        <option value="10000">വേങ്ങൂർ</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="collatedAmount">Total Collected Amount:</label>
-                    <input type="number" id="collatedAmount" class="form-control">
-                    <label for="collatedAmount">Today Collected Amount:</label>
-                    <input type="number" id="TodaycollatedAmount" class="form-control">
+    <!-- Splash Screen -->
+    <div id="splash">
+        <h1>SIO SANTHAPURAM............</h1>
+    </div>
 
-                </div>
-                <button onclick="calculate()" class="btn btn-primary btn-block">Calculate</button>
+    <!-- Main Container -->
+    <div class="container">
+        <h1>SIO</h1>
+        <h2>SANTHAPURAM</h2>
+
+        <!-- Unit Selection -->
+        <div class="form-group">
+            <label for="unitAmount">Select Unit:</label>
+            <select id="unitAmount" class="form-control">
+                <option value="18000">Santhapuram North</option>
+                <option value="24000">Kanjirapalli</option>
+                <option value="22000">Mullyakurshi</option>
+                <option value="20000">Chungam</option>
+                <option value="10000">Chirakkal</option>
+                <option value="20000">Pallikuth</option>
+                <option value="10000">Nenmini</option>
+            </select>
+        </div>
+
+        <!-- Amount Inputs -->
+        <div class="form-group">
+            <label for="collatedAmount">Total Collected Amount:</label>
+            <input type="number" id="collatedAmount" class="form-control" placeholder="Enter total amount" min="0">
+        </div>
+        <div class="form-group">
+            <label for="TodaycollatedAmount">Today Collected Amount:</label>
+            <input type="number" id="TodaycollatedAmount" class="form-control" placeholder="Enter today's amount" min="0">
+        </div>
+
+        <!-- Calculate Button -->
+        <button onclick="calculate()" class="btn btn-primary">Calculate</button>
+
+        <!-- Results Card -->
+        <div class="card mt-4">
+            <div class="card-body" id="output">
+                <!-- Results will be displayed here -->
             </div>
         </div>
-        <div class="card mt-4">
-            
-            <div class="card-body" id="output"></div>
-        </div>
+
+        <!-- Copy Button -->
+        <button onclick="copyOutput()" class="btn-copy">Copy Results <i class="fas fa-copy"></i></button>
     </div>
 
     <script>
-       function calculate() {
-    var collatedAmount = parseFloat(document.getElementById('collatedAmount').value);
-    var todayCollatedAmount = parseFloat(document.getElementById('TodaycollatedAmount').value);
-    
-    if (collatedAmount === null || isNaN(collatedAmount)) {
-        alert("അസ്സലാമു അലൈകും .താങ്കൾ കളക്ഷൻ തുക രേഖപെടിത്തിട്ടില്ല");
-        return false;
-    }
+        // Show splash screen for 2 seconds, then display the main container
+        setTimeout(() => {
+            document.getElementById('splash').style.display = 'none';
+            document.querySelector('.container').style.display = 'block';
+        }, 5000); // Adjusted to 5 seconds to allow typing animation to complete
 
-    var unitName = document.getElementById('unitAmount').options[document.getElementById('unitAmount').selectedIndex].text;
-    var unitAmount = parseFloat(document.getElementById('unitAmount').value);
-    var unitAmount15Percent = collatedAmount * 0.15;
-    var percentage = (collatedAmount / unitAmount) * 100;
-    var todayPercentage = (todayCollatedAmount / unitAmount) * 100;
+        function calculate() {
+            const collatedAmount = parseFloat(document.getElementById('collatedAmount').value);
+            const todayCollatedAmount = parseFloat(document.getElementById('TodaycollatedAmount').value);
+            const unitDropdown = document.getElementById('unitAmount');
+            const unitName = unitDropdown.options[unitDropdown.selectedIndex].text;
+            const unitAmount = parseFloat(unitDropdown.value);
 
-    var outputText = unitName + ":" + unitAmount.toFixed(2) + "</p>";
-    outputText += "<p>Total Collected Amount: ₹" + collatedAmount.toFixed(2) + "</p>";
-    outputText += "<p>Today Collected Amount: ₹" + todayCollatedAmount.toFixed(2) + "</p>";
+            if (isNaN(collatedAmount) || collatedAmount < 0) {
+                alert("Please enter a valid total collected amount.");
+                return;
+            }
 
-    outputText += "<p>Unit Amount (15%): ₹" + unitAmount15Percent.toFixed(2) + "</p>";
-    outputText += "<p>Total Fundraising Progress: " + percentage.toFixed(2) + "%</p>";
-    outputText += "<p>Today's Fundraising Progress: " + todayPercentage.toFixed(2) + "%</p>";
+            if (isNaN(todayCollatedAmount) || todayCollatedAmount < 0) {
+                alert("Please enter a valid today's collected amount.");
+                return;
+            }
 
-    if (collatedAmount >= unitAmount) {
-        outputText += "<p>Mashallah You've reached your target amount.</p>";
-    } else if (collatedAmount < todayCollatedAmount) {
-        alert("അസ്സലാമു അലൈകും.താങ്കളുടെ കളക്ഷൻ തുക ശരിയാക്കുക.");
-        return false;
-    } else {
-        var remainingAmount = unitAmount - collatedAmount;
-        outputText += "<p>You need ₹" + remainingAmount.toFixed(2) + " more to reach your target amount.</p>";
-        alert("അസ്സലാമു അലൈകും TEXT copy ചെയ്ത് റമദാൻ കളക്ഷൻ ഗ്രൂപ്പിൽ ഷെയർ ചെയ്യുക");
-    }
+            if (collatedAmount < todayCollatedAmount) {
+                alert("Today's collected amount cannot be greater than the total collected amount.");
+                return;
+            }
 
-    outputText += '<button onclick="copyOutput()" class="btn btn-primary"><h3>copy <i class="far fa-copy"></i></h3> </button>';
+            const unitAmount15Percent = collatedAmount * 0.15;
+            const percentage = (collatedAmount / unitAmount) * 100;
+            const todayPercentage = (todayCollatedAmount / unitAmount) * 100;
+            const remainingAmount = unitAmount - collatedAmount;
 
-    document.getElementById('output').innerHTML = outputText;
-}
+            let outputText = `
+                <p><strong>${unitName}:</strong> ₹${unitAmount.toFixed(2)}</p>
+                <p><strong>Total Collected:</strong> ₹${collatedAmount.toFixed(2)}</p>
+                <p><strong>Today Collected:</strong> ₹${todayCollatedAmount.toFixed(2)}</p>
+                <p><strong>15% of Total:</strong> ₹${unitAmount15Percent.toFixed(2)}</p>
+                <p><strong>Progress:</strong> ${percentage.toFixed(2)}%</p>
+                <p><strong>Today's Progress:</strong> ${todayPercentage.toFixed(2)}%</p>
+            `;
 
+            if (collatedAmount >= unitAmount) {
+                outputText += `<p class="text-success"><strong>Mashallah! Target achieved.</strong></p>`;
+            } else {
+                outputText += `<p class="text-warning"><strong>Remaining:</strong> ₹${remainingAmount.toFixed(2)}</p>`;
+            }
 
+            document.getElementById('output').innerHTML = outputText;
+        }
 
         function copyOutput() {
-            var outputText = document.getElementById('output').innerText;
+            const outputText = document.getElementById('output').innerText;
             navigator.clipboard.writeText(outputText);
-            alert("Output text copied to clipboard!");
+            alert("Results copied to clipboard!");
         }
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
